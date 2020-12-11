@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %} 
+{% load materializecss %}
+<html lang="en">
+ 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>skin_prediction</title> 
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="website keywords, website keywords" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <link rel="stylesheet"  href="{% static 'style/style.css' %}"/>
+    {% block css %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+    {% endblock css %}
+</head> 
+<body>
+    <div id="main">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">SKIN DISEASE<span class="logo_colour"> PREDICTION</span></a></h1>
+          <h2>Using ML</h2>
+        </div>
+    </div>
+    <div id="site_content">
+      <div>
+        <h1>Upload Skin Image</h1>
+        <p>Some skin conditions are minor, and others can be life-threatening. While most skin disorders are minor, others can indicate a more serious issue. Contact your doctor if you think you might have one of these common skin problems.</p>
+       <div class="form_settings">
+        <form method = "post" enctype="multipart/form-data"> 
+            {% csrf_token %} 
+            {{ form|materializecss}} 
+            <button class="submit">Upload</button> 
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+</body> 
+</html> 
